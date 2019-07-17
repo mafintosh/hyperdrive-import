@@ -11,7 +11,8 @@ function run (dir, drive, cb) {
   const ite = tree(dir)
   const progress = new EventEmitter()
 
-  progress.current = null
+  progress.path = null
+  progress.stat = null
 
   ite.next(function loop (err, node) {
     if (err) return cb(err)
@@ -19,7 +20,8 @@ function run (dir, drive, cb) {
     if (!node) return cb(null)
     if (!node.stat.isFile()) return ite.next(loop)
 
-    progress.current = node.path
+    progress.path = node.path
+    progress.stat = node.stat
     progress.emit('update', node.path)
 
     pump(fs.createReadStream(node.path), drive.createWriteStream(path.relative(dir, node.path)), function (err) {

@@ -14,5 +14,5 @@ const drive = hyperdrive(process.argv[3])
 imp(src, drive, function (err) {
   if (err) throw err
 }).on('update', function () {
-  console.log('Importing ' + this.current)
+  console.log('Importing ' + this.path, '(' + this.stat.size + ' bytes)')
 })
