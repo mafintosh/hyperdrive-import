@@ -1,0 +1,24 @@
+{
+  "name": "hyperdrive-import",
+  "version": "0.0.0",
+  "description": "Import a folder to Hyperdrive 10",
+  "main": "index.js",
+  "dependencies": {
+    "fs-tree-iterator": "^1.1.0",
+    "hyperdrive": "^10.0.0-rc8"
+  },
+  "devDependencies": {},
+  "bin": {
+    "hyperdrive-import": "./bin.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/hyperdrive-import.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/hyperdrive-import/issues"
+  },
+  "homepage": "https://github.com/mafintosh/hyperdrive-import"
+}
